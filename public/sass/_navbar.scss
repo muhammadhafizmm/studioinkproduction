@@ -1,0 +1,177 @@
+//this is navbar section scss
+
+
+// 1. navbar burger btn function
+@mixin mobile-menu-button($width, $height, $stroke, $color, $transition: ".25s ease") {
+    $sin45: 0.70710678118; //sqrt(2)/2 = sin(45 deg)
+    $cos45: $sin45;
+    $offset-y: ($width * $sin45 - $height + $stroke) / 2;
+    $offset-x: ($width * $cos45 - $width) / 2;
+  
+    position: relative;
+    width: $width;
+    height: $height;
+    transform: rotate(0deg);
+    cursor: pointer;
+  
+    span {
+      position: absolute;
+      left: 0;
+      display: block;
+      opacity: 1;
+      width: 100%;
+      height: $stroke;
+      border-radius: calc(#{$stroke} / 2);
+      background: $color;
+      transform: rotate(0deg);
+      transition: #{$transition};
+      transform-origin: right center;
+  
+      &:nth-child(1) {
+        top: 0;
+      }
+  
+      &:nth-child(2) {
+        top: calc(50% - #{$stroke} / 2);
+      }
+  
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+    &.active {
+      span {
+        &:nth-child(1) {
+          transform: rotate(-45deg);
+          top: -($offset-y);
+          left: -($offset-x);
+        }
+  
+        &:nth-child(2) {
+          width: 0%;
+          opacity: 0;
+        }
+  
+        &:nth-child(3) {
+          transform: rotate(45deg);
+          bottom: -($offset-y);
+          left: -($offset-x);
+        }
+      }
+    }
+  }
+
+
+//navbar section
+.navbar{
+    padding: 1.5% 0 1.5% 0;
+    display: flex;
+    z-index: 3;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    color: black;
+    text-decoration: none;
+    .logo{
+      a{
+        img{
+          height: 55px;
+          @include responsive(phone){
+            height: 40px;
+          }
+        }
+      }
+    }
+    .selection{
+        li{
+            display: inline-flex;
+            flex-direction: column;
+            margin: 15px;
+            height: 100%;
+            a{
+              position: relative;
+              color: inherit;
+              transform: translateY(0);
+              text-decoration: inherit;
+              transition: all .5 ease;
+              &.active{
+                transform: translateY(-20%);
+              }
+            }
+            span{
+              margin-top: 2px;
+              height: 2px;
+              width: 0%;
+              background-color: #bbe1fa;
+              border-radius: 1px;
+              transition: all .5s ease;
+              &.active{
+                width: 100%;
+                background-color: #0f4c75;
+              }
+            }
+        }
+        @include responsive(phone){
+            display: none;
+        }
+    }
+    &.active{
+      position: sticky;
+      top: 0;
+    }
+
+    @include responsive(phone){
+      padding: 6% 0 6% 0;
+  }
+}
+
+//burger btn
+.mobile-menu-button {
+    display: none;
+    @include mobile-menu-button(30px, 20px, 3px, #000);
+    @include responsive(phone){
+      display: block;
+  }
+}
+
+//big-nav
+.big-nav{
+    position: fixed;
+    display: none;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 -10% 0 -10%;
+    background-color: white;
+    transform: translateY(-20%) ;
+    transition: .3s ease;
+    transform-origin: center;
+    opacity: 0;
+    pointer-events: none;
+
+    .selection{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        a{
+            text-decoration: none;
+            color: black;
+            margin: 30px;
+        }
+    }
+    &.active{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+
+      
+  }
+    @include responsive(phone){
+        display: block;
+    }  
+}

@@ -1,0 +1,224 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10vh;
+    .tittle{
+        top: 9%;
+        color: #decbe97a;
+        position: absolute;
+        z-index: -1;
+        font-size: 7.5em;
+        font-weight: 700;
+        @include responsive(tabPort){
+            top: 11%;
+            font-size: 5em;
+        }
+        @include responsive(phone){
+            font-size: 2.3em;
+        }
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
+        .selector{
+            margin: 1rem;
+            cursor: pointer;
+            pointer-events: all;
+            &.active{
+                pointer-events: none;
+            }
+            .opsi{
+                color: #b0a1b8;
+                transition: all .5s ease-in-out;
+                &.active{
+                    color: black;
+                }
+                @include responsive(phone){
+                    font-size: .75em;
+                }
+            }
+            .line{
+                display: block;
+                opacity: 1;
+                width: 20%;
+                height: 2px;
+                border-radius: 1px;
+                background-color: #d8b5b5;
+                transition: all .5s ease-in-out;
+                &.active{
+                    width: 100%;
+                    background-color: black;
+                }
+            }
+        }
+    }
+    .containerGallery{
+        display: -webkit-box;
+        width: 100%;
+        position: relative;
+        left: 0;
+        z-index: 1;
+        background-color: white;
+        transition: .5s all ease-in-out;
+
+        &.active{
+            left: -100%;
+        }
+        .gallery{
+            width: 100;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            .gambar{
+                $res: calc((78vw / 3) - 20px);
+                width: $res;
+                height: $res;
+                margin: 10px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                transition: .5s ease;
+                overflow: hidden;
+                @include responsive(tabPort){
+                    $res : calc((77vw / 2) - 10px);
+                    width: $res;
+                    height: $res;
+                    margin: 5px;
+                }
+                .komentar{
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(31, 33, 46, 0.527);
+                    opacity: 0;
+                    display: flex;
+                    align-items: flex-end;
+                    transition: .5s ease-in-out;
+                    position: relative;
+
+                    &:hover{
+                        opacity: 1;
+                    }
+                    
+                    .form{
+                        position: absolute;
+                        left: 40%;
+                        width: 100%;
+                        align-self: center;
+
+                    }
+
+                    span{
+                        width: 100%;
+                        text-align: left;
+                        padding: .7rem;
+                        background-color: black;
+                        color: white;
+                        font-size: .8em;
+                        @include responsive(phone){
+                            font-size: .5em;
+                        }
+                    }
+                }
+                .tambah{
+                    cursor: pointer;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span{
+                        color: white;
+                        font-size: 2em;
+                        font-weight: 900;
+                        @include responsive(phone){
+                            font-size: 1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.popUp{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.651);
+    z-index: 10;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    .exit{
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        align-self: flex-end;
+        cursor: pointer;
+        span{
+            position: relative;
+            display: block;
+            background-color: white;
+            width: 100%;
+            height: 3px;
+            border-radius: 1.5px;
+            transform-origin: center center;
+            &:nth-child(1){
+                top: 15px;
+                transform: rotate(45deg);
+            }
+            &:nth-child(2){
+                top: 12px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    .object{
+        width: 65%;
+        height: 80%;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: flex-end;
+        @include responsive(tabPort){
+            height: 55%;
+        }
+        @include responsive(phone){
+            width: 90%;
+            height: 50%;
+            span{
+                font-size: .7em;
+            }
+        }
+        span{
+            width: 100%;
+            padding: .7rem;
+            color: white;
+            background-color: black;
+        }
+    }
+}
+.overflow-none{
+    overflow: hidden;
+}
+
+[data-scroll] {
+    transition: all 1s;
+}
+[data-scroll="in"]{
+    opacity: 1;
+    transform: translateY(0);
+}
+[data-scroll="out"]{
+    opacity: 0;
+    transform: translateY(-20px);
+}

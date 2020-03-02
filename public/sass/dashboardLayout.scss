@@ -1,0 +1,39 @@
+@import './responsive';
+.navbar{
+    padding: 2rem 3rem;
+    @include responsive(phone){
+        padding: 1rem;
+    }
+    a{
+      img{
+        height: 55px;
+        @include responsive(phone){
+          height: 40px;
+        }
+      }
+    }
+  }
+body{
+  margin: 0 10% 0 10%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+}
+@import './footer';
+
+.footer{
+    width: 100% ;
+    margin: 0 -10%;
+}
+.dropdown-menu{
+  left: -85%;
+  @include responsive(phone){
+    left: -100%;
+    font-size: .8em !important; 
+  }
+}
+.nav-btn{
+  @include responsive(phone){
+    font-size: .8em !important; 
+  }
+}

@@ -1,0 +1,41 @@
+.footer{
+    position: fixed;
+    width: calc(100% - 40px);
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -10% 0 -10%;
+    background-color: white;
+    bottom: -1px;
+    padding: 0 20px 10px 20px;
+
+    @include responsive(phone){
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .email{
+        span{
+            @include responsive(phone){
+                font-size: .7em;
+            }
+            a{
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+    .socmed{
+        display: flex;
+        align-items: center;
+        img{
+            width: 25px;
+            margin: 10px;
+            @include responsive(phone){
+                width: 17px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

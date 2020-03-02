@@ -1,0 +1,23 @@
+@import './responsive';
+
+.login{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .card{
+        width: 70%;
+        @include responsive(tabPort){
+            width: 100%;
+        }
+    }
+    span{
+        font-size: 3em;
+    }
+}
+.invalid-text{
+    color:#dc3545;
+    font-size: 80%;
+    margin-bottom: .25em;
+}

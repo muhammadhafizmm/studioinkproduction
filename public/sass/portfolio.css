@@ -1,0 +1,418 @@
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10vh;
+}
+
+.content .tittle {
+  top: 9%;
+  color: #decbe97a;
+  position: absolute;
+  z-index: -1;
+  font-size: 7.5em;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 900px) {
+  .content .tittle {
+    top: 11%;
+    font-size: 5em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content .tittle {
+    font-size: 2.3em;
+  }
+}
+
+.content .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.content .header .selector {
+  margin: 1rem;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.content .header .selector.active {
+  pointer-events: none;
+}
+
+.content .header .selector .opsi {
+  color: #b0a1b8;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.content .header .selector .opsi.active {
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .content .header .selector .opsi {
+    font-size: .75em;
+  }
+}
+
+.content .header .selector .line {
+  display: block;
+  opacity: 1;
+  width: 20%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #d8b5b5;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.content .header .selector .line.active {
+  width: 100%;
+  background-color: black;
+}
+
+.content .containerGallery {
+  display: -webkit-box;
+  width: 100%;
+  position: relative;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+  -webkit-transition: .5s all ease-in-out;
+  transition: .5s all ease-in-out;
+}
+
+.content .containerGallery.active {
+  left: -100%;
+}
+
+.content .containerGallery .gallery {
+  width: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.content .containerGallery .gallery .gambar {
+  width: calc((78vw / 3) - 20px);
+  height: calc((78vw / 3) - 20px);
+  margin: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 900px) {
+  .content .containerGallery .gallery .gambar {
+    width: calc((77vw / 2) - 10px);
+    height: calc((77vw / 2) - 10px);
+    margin: 5px;
+  }
+}
+
+.content .containerGallery .gallery .gambar .komentar {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(31, 33, 46, 0.527);
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  position: relative;
+}
+
+.content .containerGallery .gallery .gambar .komentar:hover {
+  opacity: 1;
+}
+
+.content .containerGallery .gallery .gambar .komentar .form {
+  position: absolute;
+  left: 40%;
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.content .containerGallery .gallery .gambar .komentar span {
+  width: 100%;
+  text-align: left;
+  padding: .7rem;
+  background-color: black;
+  color: white;
+  font-size: .8em;
+}
+
+@media only screen and (max-width: 600px) {
+  .content .containerGallery .gallery .gambar .komentar span {
+    font-size: .5em;
+  }
+}
+
+.content .containerGallery .gallery .gambar .tambah {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content .containerGallery .gallery .gambar .tambah span {
+  color: white;
+  font-size: 2em;
+  font-weight: 900;
+}
+
+@media only screen and (max-width: 600px) {
+  .content .containerGallery .gallery .gambar .tambah span {
+    font-size: 1em;
+  }
+}
+
+.popUp {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.651);
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.popUp .exit {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+}
+
+.popUp .exit span {
+  position: relative;
+  display: block;
+  background-color: white;
+  width: 100%;
+  height: 3px;
+  border-radius: 1.5px;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.popUp .exit span:nth-child(1) {
+  top: 15px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.popUp .exit span:nth-child(2) {
+  top: 12px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.popUp .object {
+  width: 65%;
+  height: 80%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media only screen and (max-width: 900px) {
+  .popUp .object {
+    height: 55%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .popUp .object {
+    width: 90%;
+    height: 50%;
+  }
+  .popUp .object span {
+    font-size: .7em;
+  }
+}
+
+.popUp .object span {
+  width: 100%;
+  padding: .7rem;
+  color: white;
+  background-color: black;
+}
+
+.overflow-none {
+  overflow: hidden;
+}
+
+[data-scroll] {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+[data-scroll="in"] {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+[data-scroll="out"] {
+  opacity: 0;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.scroll-up {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  right: 2%;
+  bottom: 10%;
+  cursor: pointer;
+  -webkit-transform-origin: 25% 25%;
+          transform-origin: 25% 25%;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+@media only screen and (max-width: 600px) {
+  .scroll-up {
+    width: 25px;
+    height: 25px;
+    right: 2%;
+    bottom: 13%;
+  }
+}
+
+.scroll-up.active {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.scroll-up.active span {
+  background: white;
+}
+
+.scroll-up span {
+  position: absolute;
+  left: 0;
+  display: block;
+  opacity: 1;
+  height: 2px;
+  border-radius: calc( 2px / 2);
+  background: black;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.scroll-up span:nth-child(1) {
+  width: 50%;
+  top: 0;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.scroll-up span:nth-child(2) {
+  width: 50%;
+  top: 0;
+  left: 7px;
+  -webkit-transform-origin: right center;
+          transform-origin: right center;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .scroll-up span:nth-child(2) {
+    left: 5px;
+  }
+}
+
+.scroll-up span:nth-child(3) {
+  width: 80%;
+  top: 4px;
+  left: -2.5px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .scroll-up span:nth-child(3) {
+    top: 2px;
+    left: -1px;
+  }
+}
+
+iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+/*# sourceMappingURL=portfolio.css.map */
