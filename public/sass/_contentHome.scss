@@ -4,36 +4,46 @@
 }
 // greeting
 .greeting{
-    height: 77vh;
-    z-index: 1;
+    height: calc(110vw * 4 / 12);
     position: relative;
     margin: 0 -12.5% 0 -12.5%;
-    background:linear-gradient(0deg, rgba(59, 13, 63, 0.664), rgba(59, 13, 63, 0.664)), url(../storage/img/3.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h1{
-        font-size: 2.8em;
-        font-weight: 800;
+    @include responsive(phone){
+        height: 77vh;
+        z-index: 1;
+        background:linear-gradient(0deg, rgba(59, 13, 63, 0.664), rgba(59, 13, 63, 0.664)), url(../storage/img/3.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .background-video{
+        width: 100%; /* width needs to be set to 100% */
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
         @include responsive(phone){
-            font-size: 1.6em;
+            display: none;
         }
     }
-    span{
-        @include responsive(phone){
-            font-size: 1em;
+    h1{
+        display: none;
+        font-size: 1.6em;
+        margin: 0;
+    }
+    @include responsive(phone){
+        h1{
+            display: block;
         }
     }
 }
 // client
 .client{
     margin: 1rem;
-    // slider and all client
     .all-client{
         width: 100%;
         display: flex;
@@ -53,7 +63,7 @@
             width: 100%;
             display: flex;
             position: relative;
-            margin: 7vh 0 7vh 0;
+            margin: 1vh 0 4vh 0;
             .logo-client{
                 width: 10vw;
                 margin: 20px;
@@ -78,7 +88,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 10vh -12.5% 10vh -12.5%;
+    margin: 1vh -12.5% 10vh -12.5%;
     .header{
         h2{
             font-weight: 300;

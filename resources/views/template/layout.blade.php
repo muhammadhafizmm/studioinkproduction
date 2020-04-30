@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('sass/layout.css') }}">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="icon" href="{{ url('/') }}/storage/img/studioink.png">
+    <link rel="icon" href="{{ url('/') }}/storage/img/logoHead.png">
     <title>@yield('tittle')</title>
 </head>
 <body>
@@ -30,11 +30,19 @@
             </div>
         </div>
         <div class="big-nav" id="select">
-            <div class="selection" onclick="tooglebtn1()" >
-                <a href="{{ url('/') }}">Home</a>
-                <a href="{{ url('/#client') }}">Clients</a>
-                <a href="{{ url('/#portfolio') }}">Portfolio</a> 
-            </div>
+            @if ($client ?? '')
+                <div class="selection" onclick="tooglebtn1()" >
+                    <a href="{{ url('/') }}">Home</a>
+                    <a href="{{ url('/#client') }}">Clients</a>
+                    <a href="{{ url('/#portfolio') }}">Portfolio</a> 
+                </div>
+            @else
+                <div class="selection" onclick="tooglebtn1()" >
+                    <a href="{{ url('/') }}">Home</a>
+                    <a href="{{ url('/') }}">Clients</a>
+                    <a href="{{ url('/') }}">Portfolio</a> 
+                </div>
+            @endif
         </div>
     <!-- end of navbar section -->
 

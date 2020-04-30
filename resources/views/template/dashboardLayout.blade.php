@@ -9,7 +9,7 @@
     @yield('css')
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="{{ asset('sass/dashboardLayout.css') }}" rel="stylesheet" type="text/css" >
-    <link rel="icon" href="{{ url('/') }}/storage/img/studioink.png">
+    <link rel="icon" href="{{ url('/') }}/storage/img/logoHead.png">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title>@yield('tittle')</title>

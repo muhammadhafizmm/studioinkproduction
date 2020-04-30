@@ -10,30 +10,31 @@
     <!-- content section -->
     <!-- greeting -->
     <div class="greeting child">
-        <h1 data-scroll>STUDIOINKPRODUCTION</h1>
-        <span>Photography / Videography</span>
-        </div>
+        <video class="background-video" no-control muted loop autoplay src="{{url('/')}}/storage/img/videoOpening.mp4"></video>
+        <h1 data-scroll>PHOTO & VIDEO</h1>
+        <h1 data-scroll>PRODUCTION HOUSE</h1>
+    </div>
         <!-- end of greeting -->
     
         <!-- client -->
         <div class="client child" id="client" data-scroll>
-        <div class="all-client">
-            <div class="header"><h2>Clients</h2></div>
-            <div class="gallery-client" id="gallery1" data-scroll>
-                @foreach ($client as $item)
-                @if ($item -> tipe == 'atas')
-                    <div class="logo-client"><img src="{{url('/')}}/storage/img/client/{{$item -> nama}}" alt=""></div>
-                @endif
-                @endforeach
+            <div class="all-client">
+                <div class="header"><h2>Clients</h2></div>
+                <div class="gallery-client" id="gallery1" data-scroll>
+                    @foreach ($client as $item)
+                    @if ($item -> tipe == 'atas')
+                        <div class="logo-client"><img src="{{url('/')}}/storage/img/client/{{$item -> nama}}" alt=""></div>
+                    @endif
+                    @endforeach
+                </div>
+                <div class="gallery-client" id="gallery2" data-scroll>
+                    @foreach ($client as $item)
+                    @if ($item -> tipe == 'bawah')
+                        <div class="logo-client"><img src="{{url('/')}}/storage/img/client/{{$item -> nama}}" alt=""></div>
+                    @endif
+                    @endforeach
+                </div>
             </div>
-            <div class="gallery-client" id="gallery2" data-scroll>
-                @foreach ($client as $item)
-                @if ($item -> tipe == 'bawah')
-                    <div class="logo-client"><img src="{{url('/')}}/storage/img/client/{{$item -> nama}}" alt=""></div>
-                @endif
-                @endforeach
-            </div>
-        </div>
         </div>
         <!-- End of Client -->
     

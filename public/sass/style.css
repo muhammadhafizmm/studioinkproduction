@@ -3,45 +3,61 @@
 }
 
 .greeting {
-  height: 77vh;
-  z-index: 1;
+  height: calc(110vw * 4 / 12);
   position: relative;
   margin: 0 -12.5% 0 -12.5%;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(59, 13, 63, 0.664)), to(rgba(59, 13, 63, 0.664))), url(../storage/img/3.jpg);
-  background: linear-gradient(0deg, rgba(59, 13, 63, 0.664), rgba(59, 13, 63, 0.664)), url(../storage/img/3.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .greeting {
+    height: 77vh;
+    z-index: 1;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(59, 13, 63, 0.664)), to(rgba(59, 13, 63, 0.664))), url(../storage/img/3.jpg);
+    background: linear-gradient(0deg, rgba(59, 13, 63, 0.664), rgba(59, 13, 63, 0.664)), url(../storage/img/3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.greeting .background-video {
+  width: 100%;
+  /* width needs to be set to 100% */
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 600px) {
+  .greeting .background-video {
+    display: none;
+  }
 }
 
 .greeting h1 {
-  font-size: 2.8em;
-  font-weight: 800;
+  display: none;
+  font-size: 1.6em;
+  margin: 0;
 }
 
 @media only screen and (max-width: 600px) {
   .greeting h1 {
-    font-size: 1.6em;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .greeting span {
-    font-size: 1em;
+    display: block;
   }
 }
 
@@ -81,7 +97,7 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  margin: 7vh 0 7vh 0;
+  margin: 1vh 0 4vh 0;
 }
 
 .client .all-client .gallery-client .logo-client {
@@ -123,7 +139,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 10vh -12.5% 10vh -12.5%;
+  margin: 1vh -12.5% 10vh -12.5%;
 }
 
 .portfolio .header h2 {

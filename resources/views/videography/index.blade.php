@@ -8,14 +8,8 @@
 @section('content')
     <div class="content">
         <div class="tittle">videography</div>
-        <div class="header">
-            <div class="selector active">
-                <h3 class="opsi active">All</h3>
-                <span class="line active"></span>
-            </div>
-        </div>
         @php $j = 0 @endphp
-        <div class="containerGallery" id="containerGal">
+        <div class="containerGallery mt-6" id="containerGal">
             <div class="gallery">
                 @foreach ($videography as $item)
                 <div class="gambar" style="background-image: url({{url('/')}}/storage/img/thumbnail/{{$item -> thumbnail}});" onclick="popingUp({{ $j }})">

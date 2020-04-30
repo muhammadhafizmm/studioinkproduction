@@ -68,10 +68,11 @@
             left: -100%;
         }
         .gallery{
-            width: 100;
+            width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
+            height: fit-content;
             .gambar{
                 $res: calc((78vw / 3) - 20px);
                 width: $res;

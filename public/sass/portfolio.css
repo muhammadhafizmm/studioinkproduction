@@ -104,7 +104,7 @@
 }
 
 .content .containerGallery .gallery {
-  width: 100;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,6 +113,9 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .content .containerGallery .gallery .gambar {
@@ -414,5 +417,15 @@
 iframe {
   width: 100% !important;
   height: 100% !important;
+}
+
+.mt-6 {
+  margin-top: 6rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .mt-6 {
+    margin-top: 4rem;
+  }
 }
 /*# sourceMappingURL=portfolio.css.map */

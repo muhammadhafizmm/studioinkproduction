@@ -40,6 +40,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/dashboard/tambahClient', 'ClientController@store');
     // delete photo
     Route::delete('/dashboard/photography', 'PhotographyPage@destroy');
-    Route::delete('/dashboard/videography', 'Videographypage@destroy');
+    Route::delete('/dashboard/videography', 'VideographyPage@destroy');
     Route::delete('/dashboard/client', 'ClientController@destroy');
 });

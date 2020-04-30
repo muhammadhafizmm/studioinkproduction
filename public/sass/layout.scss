@@ -2,6 +2,9 @@
 @import "./responsive";
 
 html{
+    @include responsive(phone){
+        scroll-behavior: unset;
+    }
     scroll-behavior: smooth;
 }
 
